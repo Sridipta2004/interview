@@ -1,0 +1,97 @@
+/* Reset default browser styles */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+/* Body */
+
+body{
+
+font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+background:linear-gradient(135deg,#667eea,#764ba2);
+
+min-height:100vh;
+
+color:#333;
+
+}
+
+
+/* Links */
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+
+/* Buttons */
+
+button{
+
+cursor:pointer;
+
+border:none;
+
+outline:none;
+
+}
+
+
+/* Container utility */
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:20px;
+
+}
+
+
+/* Headings */
+
+h1,h2,h3{
+
+font-weight:600;
+
+}
+
+
+/* Smooth scroll */
+
+html{
+scroll-behavior:smooth;
+}
+
+
+/* Input fields */
+
+input,textarea,select{
+
+font-family:inherit;
+
+}
+
+
+/* Scrollbar styling */
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-track{
+background:#eee;
+}
+
+::-webkit-scrollbar-thumb{
+background:#764ba2;
+border-radius:10px;
+}

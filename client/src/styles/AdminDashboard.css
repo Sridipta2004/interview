@@ -1,0 +1,70 @@
+.admin-container{
+
+max-width:700px;
+margin:auto;
+padding:40px;
+font-family:Arial;
+
+}
+
+.admin-container h1{
+
+text-align:center;
+color:#6a5acd;
+
+}
+
+.subtitle{
+
+text-align:center;
+margin-bottom:30px;
+
+}
+
+.question-form{
+
+display:flex;
+flex-direction:column;
+gap:15px;
+
+}
+
+.question-form textarea{
+
+height:100px;
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:14px;
+
+}
+
+.question-form input{
+
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:14px;
+
+}
+
+.question-form button{
+
+padding:12px;
+background:linear-gradient(135deg,#667eea,#764ba2);
+border:none;
+color:white;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+
+}
+
+.question-form button:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+
+}

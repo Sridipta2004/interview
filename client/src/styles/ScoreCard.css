@@ -1,0 +1,73 @@
+.score-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:12px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+text-align:center;
+
+max-width:400px;
+
+margin:auto;
+
+}
+
+.score-box{
+
+margin:20px 0;
+
+}
+
+.score-box h1{
+
+font-size:40px;
+
+color:#6a5acd;
+
+}
+
+.percentage{
+
+font-size:18px;
+
+color:#555;
+
+}
+
+.improvement-section{
+
+margin-top:20px;
+
+}
+
+.improvement-section ul{
+
+list-style:none;
+
+padding:0;
+
+}
+
+.improvement-section li{
+
+background:#f4f4f4;
+
+margin:8px 0;
+
+padding:8px;
+
+border-radius:6px;
+
+}
+
+.great{
+
+color:green;
+
+font-weight:bold;
+
+}
