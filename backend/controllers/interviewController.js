@@ -52,8 +52,11 @@ export const addQuestion = async (req, res) => {
 // ===============================
 export const submitInterview = async (req, res) => {
   try {
-    const { answers } = req.body;
-    const userId = req.user.id;
+    const { answers, userId: bodyUserId } = req.body;
+    const userId = req.user?.id || req.user?._id || bodyUserId;
+    if (!userId) {
+      return res.status(400).json({ message: "User ID is required to submit the interview." });
+    }
 
     const questions = await Question.find();
 
@@ -66,7 +69,7 @@ export const submitInterview = async (req, res) => {
     });
 
     const result = new Result({
-      user: userId,
+      userId,
       score,
       total: questions.length
     });

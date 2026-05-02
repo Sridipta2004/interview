@@ -9,13 +9,14 @@ const Interview = () => {
   const [answers, setAnswers] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const storedUser = JSON.parse(localStorage.getItem("user") || "null");
 
   // FETCH QUESTIONS
   useEffect(() => {
     fetch("http://localhost:5000/api/interview/questions")
       .then(res => res.json())
       .then(data => {
-        setQuestions(data.questions);   // ✅ IMPORTANT FIX
+        setQuestions(data.questions);
         setLoading(false);
       })
       .catch(err => {
@@ -24,7 +25,6 @@ const Interview = () => {
       });
   }, []);
 
-
   // HANDLE OPTION
   const handleOption = (qIndex, option) => {
     const newAnswers = [...answers];
@@ -32,14 +32,20 @@ const Interview = () => {
     setAnswers(newAnswers);
   };
 
-
   // SUBMIT
   const handleSubmit = async () => {
-
     if (answers.length !== questions.length || answers.includes(undefined)) {
       alert("Please answer all questions");
       return;
     }
+
+    if (!storedUser?._id && !storedUser?.id) {
+      alert("Please log in before submitting the interview.");
+      navigate("/login");
+      return;
+    }
+
+    const userId = storedUser._id || storedUser.id;
 
     const res = await fetch("http://localhost:5000/api/interview/submit", {
       method: "POST",
@@ -47,7 +53,7 @@ const Interview = () => {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${localStorage.getItem("token")}`
       },
-      body: JSON.stringify({ answers }) // ✅ ONLY answers
+      body: JSON.stringify({ answers, userId })
     });
 
     const data = await res.json();
